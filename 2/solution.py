@@ -64,7 +64,7 @@ DOMAIN = 'https://ru.wikipedia.org'
 URL = f'{DOMAIN}/wiki/Категория:Животные_по_алфавиту'
 
 if __name__ == '__main__':
-    warnings.warn('перед запуском скачать библиотеки: requests, BeautifulSoup, lxml')
+    # warnings.warn('перед запуском скачать библиотеки: requests, BeautifulSoup, lxml')
 
     letters = {}
     parse_page(URL, letters)
