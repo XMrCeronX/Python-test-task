@@ -20,6 +20,33 @@
 # print(sum_two(1, 2.4))  # >>> TypeError
 # ```
 
+MyType = (bool, int, float, str)
+
+
+def strict(func):
+    def wrapper(*args):
+        # anno = func.__annotations__
+        # print(anno)
+        # [print(f'{i} --> {type(i)}') for i in args]
+        a, b = args
+        if type(a) != type(b):
+            raise TypeError(f'Типы параметров не должны различаться: {type(a)} != {type(b)}')
+        return func(a, b)
+
+    return wrapper
+
+
+@strict
+def sum_two(
+        a: MyType,
+        b: MyType
+) -> MyType:
+    return a + b
+
 
 if __name__ == '__main__':
-    pass
+    print(sum_two(1, 2))  # >>> 3
+    print(sum_two(False, False))  # >>> 0
+    print(sum_two(False, True))  # >>> 1
+    print(sum_two('False', 'True'))  # >>> FalseTrue
+    # print(sum_two(1, 2.4))  # >>> TypeError
