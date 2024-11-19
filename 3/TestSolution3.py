@@ -33,7 +33,7 @@ class TestSolution3(unittest.TestCase):
             self.assertEqual(test_answer, test['answer'],
                              f'Error on test case {i}, got {test_answer}, expected {test["answer"]}')
 
-    def test_data(self):
+    def test_appearance(self):
         self.assertEqual(type(self.tests), list)
         self.assertEqual(type(self.tests[0]), dict)
         self.assertEqual(type(self.tests[1]), dict)
