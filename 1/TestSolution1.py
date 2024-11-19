@@ -2,7 +2,7 @@ import unittest
 from solution import sum_two
 
 
-class TestCalculator(unittest.TestCase):
+class TestSolution1(unittest.TestCase):
     def test_default(self):
         self.assertEqual(sum_two(1, 2), 3)
         with self.assertRaises(TypeError) as cm:
